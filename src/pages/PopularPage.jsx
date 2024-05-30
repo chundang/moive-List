@@ -39,6 +39,7 @@ const PopularPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
   console.log(process.env.REACT_APP_ACCESS_TOKEN);
+
   const getMovieData = async (page) => {
     setIsLoading(true);
     try {

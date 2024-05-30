@@ -40,6 +40,9 @@ const StyleLink = styled(Link)`
     transform: scale(1.1);
     color: skyblue;
   }
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const HamburgerMenu = styled.div`

@@ -55,7 +55,7 @@ const MovieComponent = ({ movieData }) => {
   const navigate = useNavigate();
 
   const handleClick = (movie) => {
-    navigate(`/movie/${movie.title}`, {
+    navigate(`/movie/${movie.id}`, {
       state: {
         poster_path: movie.poster_path,
         title: movie.title,

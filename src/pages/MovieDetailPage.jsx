@@ -17,6 +17,7 @@ const Container = styled.div`
 const MovieDetailPage = () => {
   const { id } = useParams();
   const parsedId = parseInt(id);
+  console.log("id", id);
 
   const [movieDetailData, setMovieDetailData] = useState({});
   const [movieCreditsData, setMovieCreditsData] = useState([]);
@@ -29,7 +30,7 @@ const MovieDetailPage = () => {
           axios.get(`https://api.themoviedb.org/3/movie/${id}`, {
             headers: {
               accept: "application/json",
-              Authorization: `Bearer ${process.env.REACT_APP_TMDB_ACCESS_TOKEN}`,
+              Authorization: `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`,
             },
             params: {
               language: "ko-KR",
@@ -38,7 +39,7 @@ const MovieDetailPage = () => {
           axios.get(`https://api.themoviedb.org/3/movie/${id}/credits`, {
             headers: {
               accept: "application/json",
-              Authorization: `Bearer ${process.env.REACT_APP_TMDB_ACCESS_TOKEN}`,
+              Authorization: `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`,
             },
             params: {
               language: "en-US",
@@ -50,6 +51,7 @@ const MovieDetailPage = () => {
         setMovieCreditsData(creditsResponse.data.cast);
       } catch (error) {
         console.error(error);
+        console.log("error", error);
       } finally {
         setLoading(false);
       }
