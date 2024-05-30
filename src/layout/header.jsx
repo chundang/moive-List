@@ -124,7 +124,7 @@ const Header = () => {
   return (
     <Container>
       <ContentContainer>
-        <HomeLogo to="/">UMC Movie1</HomeLogo>
+        <HomeLogo to="/">UMC Movie</HomeLogo>
       </ContentContainer>
       <ContentContainer>
         <HamburgerMenu onClick={() => setSidebarOpen(!sidebarOpen)}>
